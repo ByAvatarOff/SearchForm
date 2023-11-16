@@ -2,10 +2,9 @@ from services.validation_service import phone_validate, email_validate, date_val
 from searchform.models import TinyDbManager
 
 
-#  TODO its a shit need remake
 def form_doesnt_exist(data_request: dict) -> dict:
     """
-
+    Func for validate value
     """
     response = {}
     for data in data_request.keys():
