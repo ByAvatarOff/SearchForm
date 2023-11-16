@@ -1,0 +1,39 @@
+{"_default": {
+    "1":
+    {
+        "name": "User Form",
+        "user_email": "email",
+        "user_phone": "phone",
+        "user_date": "date",
+        "text_message": "message"
+    },
+    "2":
+    {
+        "name": "Message Form",
+        "user_name": "message",
+        "user_date": "date",
+        "text_message": "message"
+    },
+    "3":
+    {
+        "name": "Phone Form",
+        "phone": "phone",
+        "add_date": "date"
+    },
+    "4":
+    {
+        "name": "Order Form",
+        "customer_email": "email",
+        "customer_phone": "phone",
+        "order_date": "date",
+        "order_description": "message",
+        "type_delivery": "message"
+    },
+    "5":
+    {
+        "name": "Game Form",
+        "nickname": "message"
+    }
+}
+}
+
