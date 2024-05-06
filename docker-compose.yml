@@ -1,0 +1,26 @@
+version: '3.8'
+
+volumes:
+  mongo_data:
+
+services:
+  forms:
+    container_name: forms
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src/
+    env_file:
+      - .env
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    volumes:
+      - ./formdb:/formdb
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"

@@ -1,11 +1,13 @@
 # Search Form
-## Setting django app:
+## Алгоритм запуска:
 - ### git clone https://github.com/ByAvatarOff/SearchForm.git
-- ### cd test_task
-- ### env\Scripts\activate
-- ### cd form
-- ### python manage.py runserver 127.0.0.1:8001
-- ### launch test script test_task/request_test.py
+- ### cd SearchForm
+- ### mv .env.example .env  # OS Linux
+- ### docker-compose build
+- ### docker-compose up
+- ### docker exec -it mongodb  mongorestore -d formdb ./formdb
+## Запуск тестов
+### docker exec -it forms pytest tests/
 ## endpoint /api/form/ [POST]
 ## example data request
 `{ "user_email": "tsp7439@gmail.com", 
