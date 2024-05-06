@@ -11,7 +11,7 @@ class TypeValueEnum(StrEnum):
 
 
 class ValidationService:
-    def __init__(self, data: dict):
+    def __init__(self, data: dict) -> None:
         self.data = data
 
     def validation_func(self, value: str) -> str:

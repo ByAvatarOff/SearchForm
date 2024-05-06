@@ -5,7 +5,7 @@ class FormService:
     def __init__(self):
         self.mongo_repo = MongoRepo()
 
-    def is_subset_dict(self, sub, data):
+    def is_subset_dict(self, sub: dict, data: dict) -> bool:
         doc_copy = sub.copy()
         del doc_copy['_id']
         del doc_copy['name']
@@ -15,13 +15,13 @@ class FormService:
             return False
         return True
 
-    def check_depth_form_matches(self, data):
+    def check_depth_form_matches(self, data) -> str | dict:
         for doc in self.mongo_repo.read_docs_from_collection():
             if self.is_subset_dict(sub=doc, data=data):
                 return doc.get('name')
         return data
 
-    def get_form_from_mongo(self, validate_data):
+    def get_form_from_mongo(self, validate_data: dict) -> str | dict:
         if find_element := self.mongo_repo.find_element(data=validate_data):
             return find_element.get('name')
         return self.check_depth_form_matches(data=validate_data)
